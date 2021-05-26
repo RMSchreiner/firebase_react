@@ -5,10 +5,12 @@ import App from './App';
 import * as serviceWorker from './registerServiceWorker';
 import reportWebVitals from './reportWebVitals';
 import firebase from 'firebase/app';
+import 'firebase/analytics'
+import 'firebase/database'
 
 var config = {apiKey: "AIzaSyAStXGoiii-qNcaLtYa6sMqH8OiV8dbRUc",
 authDomain: "reactstart-db019.firebaseapp.com",
-databaseURL: "https//reactstart-db019.firebase.io.com",
+databaseURL:"https://reactstart-db019-default-rtdb.firebaseio.com",
 projectId: "reactstart-db019",
 storageBucket: "reactstart-db019.appspot.com",
 messagingSenderId: "993529651163",

@@ -1,21 +1,32 @@
 import React, {Component} from 'react';
-import firebase from 'firebase/app';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import User from './User';
+import UserForm from './UserForm';
+import {BrowserRouter, Route, Switch} from 'react-router-dom'; 
 
 
 class App extends Component{
 
-  constructor(){
-    super();
-    console.log(firebase);
-  }
-
 render(){
   return(
     <div>
-      <h1>Hello</h1>
+      <BrowserRouter>
+      <div>
+        <Switch>
+        <Route path ="/add" component={UserForm}/>
+        <Route exact path="/" component={User}/>
+        <Route path = "/*" component={NotFound}/>
+        </Switch>
+      </div>
+      </BrowserRouter>
     </div>
   );
 }
 }
 export default App;
+
+class NotFound extends Component{
+  render(){
+    return <div> NotFound </div>
+  }
+}
