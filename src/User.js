@@ -3,7 +3,7 @@ import firebase from 'firebase/app';
 import { Table, Button, Modal } from 'react-bootstrap';
 import 'firebase/analytics'
 import 'firebase/database'
-//import {Link} from 'react=router-dom';
+import {Link} from 'react-router-dom';
 
 class User extends Component{
 
@@ -60,7 +60,8 @@ const listUsers = this.state.users.map((user)=>
     <tr key={user.key}>
       <td>{user.username}</td>
       <td>{user.email}</td>
-      <td>Edit</td>
+      <td><Link to ={`/edit/${user.key}`}>
+          Edit</Link></td>
       <td><Button onClick={this.openDeleteDialog.bind(this,user)}>Remove</Button></td>
     </tr>
 );
@@ -91,8 +92,9 @@ const listUsers = this.state.users.map((user)=>
                     </Modal.Body>
                     <Modal.Footer>
                       <Button onClick={this.delete}> Delete </Button>
-                      <Button onclick={this.closeDeleteDialog}>Close</Button>
+                      <Button onClick = {this.closeDeleteDialog}>Close</Button>
                     </Modal.Footer>
+                    
                 </Modal>
         </div>
     );

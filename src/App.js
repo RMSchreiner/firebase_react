@@ -13,6 +13,7 @@ render(){
       <BrowserRouter>
       <div>
         <Switch>
+          <Route path="/edit/:id" component={UserForm}/>
         <Route path ="/add" component={UserForm}/>
         <Route exact path="/" component={User}/>
         <Route path = "/*" component={NotFound}/>
